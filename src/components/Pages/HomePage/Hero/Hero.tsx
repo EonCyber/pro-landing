@@ -1,6 +1,6 @@
 import Socials from "@/components/Shared/ui/Socials/Socials"
 import { Button } from "@/components/ui/button"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import ProfileImage from "./ProfileImage"
 import { SendIcon } from "lucide-react"
 import MyBadge from "./MyBadge"
@@ -50,7 +50,6 @@ export default function Hero() {
     const animBadgeOne = {initial:{ opacity: 0, y: 0 }, animate:{ opacity: 1, y: 0 }, transition:{ duration: 0.5, ease: "easeIn", delay: 0.9 }}
     const animBadgeTwo = {initial:{ opacity: 0, y: 0 }, animate:{ opacity: 1, y: 0 }, transition:{ duration: 0.5, ease: "easeIn", delay: 1 }}
     const animBadgeThree = {initial:{ opacity: 0, y: 0 }, animate:{ opacity: 1, y: 0 }, transition:{ duration: 0.5, ease: "easeIn", delay: 1.3 }}
-    const navigate = useNavigate()
     useEffect(() => {
         const interval = setInterval(() => {
             setStackIndex((prevIndex) => (prevIndex + 1) % stack.length)
