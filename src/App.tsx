@@ -16,8 +16,8 @@ function App() {
           <Header />
           <div className="min-h-[900px]">
             <Routes>
-              <Route path="/" element={<Home />}></Route>
-              <Route path="/contact" element={<Contact />}></Route>
+              <Route path="/pro-landing" element={<Home />}></Route>
+              <Route path="/pro-landing/contact" element={<Contact />}></Route>
             </Routes>
           </div>  
           <Toaster />

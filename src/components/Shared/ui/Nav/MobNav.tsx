@@ -26,7 +26,7 @@ export default function MobileNav() {
                         linkStyle="text-2xl"
                         ></Nav>
                         <Socials containerStyles="flex gap-x-4 "
-                        iconsStyles="text-4xl hover:text-primary transition-all"
+                        iconsStyles="text-4xl hover:text-secondary transition-all"
                         ></Socials>
                     </div>
                 </div>

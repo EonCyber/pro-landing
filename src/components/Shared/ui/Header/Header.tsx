@@ -5,7 +5,6 @@ import MobileNav from "../Nav/MobNav";
 import Nav from "../Nav/Nav";
 import Logo from "../Logo/Logo";
 
-
 export default function Header() {
     const path = useLocation().pathname
     const {theme} = useTheme()

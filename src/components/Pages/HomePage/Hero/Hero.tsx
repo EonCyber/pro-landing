@@ -1,6 +1,6 @@
 import Socials from "@/components/Shared/ui/Socials/Socials"
 import { Button } from "@/components/ui/button"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import ProfileImage from "./ProfileImage"
 import { SendIcon } from "lucide-react"
 import MyBadge from "./MyBadge"
@@ -50,7 +50,7 @@ export default function Hero() {
     const animBadgeOne = {initial:{ opacity: 0, y: 0 }, animate:{ opacity: 1, y: 0 }, transition:{ duration: 0.5, ease: "easeIn", delay: 0.9 }}
     const animBadgeTwo = {initial:{ opacity: 0, y: 0 }, animate:{ opacity: 1, y: 0 }, transition:{ duration: 0.5, ease: "easeIn", delay: 1 }}
     const animBadgeThree = {initial:{ opacity: 0, y: 0 }, animate:{ opacity: 1, y: 0 }, transition:{ duration: 0.5, ease: "easeIn", delay: 1.3 }}
-    
+    const navigate = useNavigate()
     useEffect(() => {
         const interval = setInterval(() => {
             setStackIndex((prevIndex) => (prevIndex + 1) % stack.length)
@@ -58,6 +58,9 @@ export default function Hero() {
         }, 3000)  
         return () => clearInterval(interval)
     })
+    const toContact = () => {
+        navigate("/pro-landing/contact")
+    }
     return (
         <section className='relative py-12 xl:py-24 h-[23vh] xl:h-[100vh] xl:pt-30 bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-hero_dark'>
             <div className="container mx-auto z-10">
@@ -74,9 +77,9 @@ export default function Hero() {
                         </div>
                         
                         <div className='flex flex-col gap-y-3 md:flex-row gap-x-3 mx-auto xl:mx-0 mb-12'>
-                            <Button variant='default' className="rounded-full shadow-md gap-x-2">Download CV</Button>
+                            <Button variant='default' disabled className="rounded-full shadow-md gap-x-2">Download CV</Button>
                             <Link to={'/contact'}>
-                                <Button variant='secondary' className="rounded-full shadow-md gap-x-2">Contact Me<SendIcon size={18}/></Button>
+                                <Button variant='secondary' className="rounded-full shadow-md gap-x-2" onClick={toContact}>Contact Me<SendIcon size={18}/></Button>
                             </Link>
                         </div>
                         <Socials iconsStyles='text-primary xl:text-[44px] text-[32px] hover:text-secondary transition-all' containerStyles='flex gap-x-6 mx-auto xl:mx-0 '></Socials>
@@ -144,7 +147,6 @@ export default function Hero() {
                         </motion.div>
                         <ProfileImage containerStyles="w-[350px] h-[350px] dark:border-white dark:border-2" imgSrc="profile/vieira-bot.jpeg"></ProfileImage>       
                     </div>
-
                 </div>
             </div>
             <div className="absolute  inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-white dark:to-[#0c0a0a]"></div>

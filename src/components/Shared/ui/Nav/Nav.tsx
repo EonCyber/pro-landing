@@ -2,8 +2,8 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 export default function Nav({sectionStyle, linkStyle, underlineStyle}: {sectionStyle: string, linkStyle: string, underlineStyle: string}) {
     const links = [
-        { path: '/', name: 'Home'},
-        { path: '/contact', name: 'Contact'},
+        { path: '/pro-landing', name: 'Home'},
+        { path: '/pro-landing/contact', name: 'Contact'},
     ]
     const anim = {
         initial: { y: '-100%'},
