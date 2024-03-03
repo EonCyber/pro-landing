@@ -1,12 +1,10 @@
-'use client'
-
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { AlignJustify } from "lucide-react"
 
-import Nav from "./Nav"
-import Logo from "../Logo/Logo"
-import Socials from "../Socials/Socials"
 import { useTheme } from "../Themes/theme-provider"
+import Logo from "../Logo/Logo"
+import Nav from "./Nav"
+import Socials from "../Socials/Socials"
 
 
 export default function MobileNav() {
@@ -19,7 +17,7 @@ export default function MobileNav() {
             <SheetContent>
                 <div>
                     <div className="mb-32">
-                        {theme == 'light' ? <Logo imgSrc="src/assets/logo/logo-light.svg"/> : <Logo imgSrc="src/assets/logo/logo-dark.svg"/>}
+                        {theme == 'light' ? <Logo imgSrc="logo/logo-light.svg"/> : <Logo imgSrc="logo/logo-dark.svg"/>}
                     </div>
                     <div className="flex flex-col items-center gap-y-32">
                         <Nav 

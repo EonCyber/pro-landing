@@ -52,11 +52,9 @@ export default function Hero() {
     const animBadgeThree = {initial:{ opacity: 0, y: 0 }, animate:{ opacity: 1, y: 0 }, transition:{ duration: 0.5, ease: "easeIn", delay: 1.3 }}
     
     useEffect(() => {
-        console.log('hit')
         const interval = setInterval(() => {
             setStackIndex((prevIndex) => (prevIndex + 1) % stack.length)
             setLangIndex((prevIndex) => (prevIndex + 1) % langs.length)
-
         }, 3000)  
         return () => clearInterval(interval)
     })
@@ -66,7 +64,7 @@ export default function Hero() {
                 <div className="flex justify-between gap-x-8">
                     <div className="flex max-w-[700px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left ">
                         <div className="xl:hidden self-center mb-8">
-                            <ProfileImage containerStyles="z-10 w-[200px] h-[200px] -left-2 dark:border-white dark:border-2" imgSrc="src/assets/profile/vieira-bot.jpeg"></ProfileImage>       
+                            <ProfileImage containerStyles="z-10 w-[200px] h-[200px] -left-2 dark:border-white dark:border-2" imgSrc="profile/vieira-bot.jpeg"></ProfileImage>       
                         </div>
                         <div className="xl:text-lg text-md uppercase font-bold mb-4 py-4 xl:mb-0 xl:py-6 text-primary tracking-[1px]">Fullstack Software Engineer</div>
                         <h1 className="text-[58px] marker">Let's Build Together!</h1>
@@ -144,7 +142,7 @@ export default function Hero() {
                                 </div>
                             </MyBadge>
                         </motion.div>
-                        <ProfileImage containerStyles="w-[350px] h-[350px] dark:border-white dark:border-2" imgSrc="src/assets/profile/vieira-bot.jpeg"></ProfileImage>       
+                        <ProfileImage containerStyles="w-[350px] h-[350px] dark:border-white dark:border-2" imgSrc="profile/vieira-bot.jpeg"></ProfileImage>       
                     </div>
 
                 </div>

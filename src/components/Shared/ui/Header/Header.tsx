@@ -14,7 +14,7 @@ export default function Header() {
             <div className="container mx-auto">
                 <div className="flex items-center justify-between">
                     <div>
-                        {theme == 'light' ? <Logo imgSrc="src/assets/logo/logo-light.svg"/> : <Logo imgSrc="src/assets/logo/logo-dark.svg"/>}
+                        {theme == 'light' ? <Logo imgSrc="logo/logo-light.svg"/> : <Logo imgSrc="logo/logo-dark.svg"/>}
                         
                         </div>
                     <div className="flex items-center gap-x-6">
