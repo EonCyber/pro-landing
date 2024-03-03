@@ -21,7 +21,7 @@ import { ExpressOriginalWordmark ,
     DockerPlain ,
     SpringOriginal, 
 } from 'devicons-react'
-
+import { routesPaths } from "@/components/Shared/api/routes/routes"
 
 export default function Hero() {
     const [stackIndex, setStackIndex] = useState(0)
@@ -75,7 +75,7 @@ export default function Hero() {
                         
                         <div className='flex flex-col gap-y-3 md:flex-row gap-x-3 mx-auto xl:mx-0 mb-12'>
                             <Button variant='default' disabled className="rounded-full shadow-md gap-x-2">Download CV</Button>
-                            <Link to={'/pro-landing/contact'}>
+                            <Link to={routesPaths.contact}>
                                 <Button variant='secondary' className="rounded-full shadow-md gap-x-2">Contact Me<SendIcon size={18}/></Button>
                             </Link>
                         </div>

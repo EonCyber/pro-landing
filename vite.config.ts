@@ -4,7 +4,7 @@ import path from "path"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/pro-landing/',
+  base: '/',
   plugins: [react()],
   resolve: {
     alias: {

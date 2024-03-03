@@ -7,6 +7,8 @@ import { ThemeProvider } from "./components/Shared/ui/Themes/theme-provider"
 import { AnimatePresence } from 'framer-motion'
 import { Toaster } from "@/components/ui/toaster"
 import Footer from "./components/Shared/ui/Footer/Footer"
+import { routesPaths } from "./components/Shared/api/routes/routes"
+
 function App() {
 
   return (
@@ -16,8 +18,8 @@ function App() {
           <Header />
           <div className="min-h-[900px]">
             <Routes>
-              <Route path="/pro-landing" element={<Home />}></Route>
-              <Route path="/pro-landing/contact" element={<Contact />}></Route>
+              <Route path={routesPaths.home} element={<Home />}></Route>
+              <Route path={routesPaths.contact} element={<Contact />}></Route>
             </Routes>
           </div>  
           <Toaster />
