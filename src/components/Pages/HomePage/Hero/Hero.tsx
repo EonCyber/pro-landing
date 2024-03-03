@@ -58,16 +58,14 @@ export default function Hero() {
         }, 3000)  
         return () => clearInterval(interval)
     })
-    const toContact = () => {
-        navigate("/pro-landing/contact")
-    }
+    
     return (
         <section className='relative py-12 xl:py-24 h-[23vh] xl:h-[100vh] xl:pt-30 bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-hero_dark'>
             <div className="container mx-auto z-10">
                 <div className="flex justify-between gap-x-8">
                     <div className="flex max-w-[700px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left ">
                         <div className="xl:hidden self-center mb-8">
-                            <ProfileImage containerStyles="z-10 w-[200px] h-[200px] -left-2 dark:border-white dark:border-2" imgSrc="profile/vieira-bot.jpeg"></ProfileImage>       
+                            <ProfileImage containerStyles="z-10 w-[200px] h-[200px] -left-2 dark:border-white dark:border-2" imgSrc="/profile/vieira-bot.jpeg"></ProfileImage>       
                         </div>
                         <div className="xl:text-lg text-md uppercase font-bold mb-4 py-4 xl:mb-0 xl:py-6 text-primary tracking-[1px]">Fullstack Software Engineer</div>
                         <h1 className="text-[58px] marker">Let's Build Together!</h1>
@@ -78,8 +76,8 @@ export default function Hero() {
                         
                         <div className='flex flex-col gap-y-3 md:flex-row gap-x-3 mx-auto xl:mx-0 mb-12'>
                             <Button variant='default' disabled className="rounded-full shadow-md gap-x-2">Download CV</Button>
-                            <Link to={'/contact'}>
-                                <Button variant='secondary' className="rounded-full shadow-md gap-x-2" onClick={toContact}>Contact Me<SendIcon size={18}/></Button>
+                            <Link to={'/pro-landing/contact'}>
+                                <Button variant='secondary' className="rounded-full shadow-md gap-x-2">Contact Me<SendIcon size={18}/></Button>
                             </Link>
                         </div>
                         <Socials iconsStyles='text-primary xl:text-[44px] text-[32px] hover:text-secondary transition-all' containerStyles='flex gap-x-6 mx-auto xl:mx-0 '></Socials>
@@ -145,7 +143,7 @@ export default function Hero() {
                                 </div>
                             </MyBadge>
                         </motion.div>
-                        <ProfileImage containerStyles="w-[350px] h-[350px] dark:border-white dark:border-2" imgSrc="profile/vieira-bot.jpeg"></ProfileImage>       
+                        <ProfileImage containerStyles="w-[350px] h-[350px] dark:border-white dark:border-2" imgSrc="/profile/vieira-bot.jpeg"></ProfileImage>       
                     </div>
                 </div>
             </div>
