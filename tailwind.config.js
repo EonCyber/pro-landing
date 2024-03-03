@@ -72,9 +72,9 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        hero: 'url(hero/background-rain.svg)',
-        hero_dark: 'url(hero/background-rain-dark.svg)',        
-        bender: 'url(contact/bender.png)',        
+        hero: 'url(../hero/background-rain.svg)',
+        hero_dark: 'url(../hero/background-rain-dark.svg)',        
+        bender: 'url(../contact/bender.png)',        
       }
     },
   },
