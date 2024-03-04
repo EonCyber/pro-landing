@@ -9,9 +9,12 @@ import {
     FormControl,
     FormField,
     FormItem,
+    FormMessage,
   } from "@/components/ui/form"
 import { useToast } from "@/components/ui/use-toast"
 import { z } from 'zod'
+
+import DOMPurify from "dompurify";
 
 import { collection, addDoc } from 'firebase/firestore';
 import { db, portfolioFormResponse } from "@/components/Shared/api/firebase/config";
@@ -19,7 +22,9 @@ import { ToastAction } from "@radix-ui/react-toast";
 
 const formSchema = z.object({
     name: z.string(),
-    contact: z.string(),
+    contact: z.string().refine((value) => /^\+?\d{6,15}$/.test(value) || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value), {
+        message: 'Must be a valid Email (eg. myemail@gmail.com) or Phone number (eg. +55333332222)',
+      }),
     message: z.string(),
 })
 
@@ -35,7 +40,10 @@ export default function ContactForm() {
     const { toast } = useToast()
     const saveMessage = async (values: z.infer<typeof formSchema>) => {
       try { 
-        await addDoc(collection(db, portfolioFormResponse), values)
+        const sanitizedValues = Object.fromEntries(
+            Object.entries(values).map(([key, value]) => [key, DOMPurify.sanitize(value)])
+          );
+        await addDoc(collection(db, portfolioFormResponse), sanitizedValues)
         toast({
             variant: 'default',
             title: "Mensagem Enviada!",
@@ -79,6 +87,7 @@ export default function ContactForm() {
                                 <MailIcon className="absolute right-6" size={20} />
                             </div>
                             </FormControl>
+                            <FormMessage />
                         </FormItem>
                     )} />
                 <FormField 
